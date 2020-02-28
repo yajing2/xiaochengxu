@@ -1,0 +1,59 @@
+<view class="container">
+  <!-- 头部搜索栏 -->
+  <navigator url="">
+    <view class="search">
+      <view class="search-input">
+        <icon type="search" size="18" /> 搜索
+      </view>
+    </view>
+  </navigator>
+  <!-- 轮播图 -->
+  <!-- indicator-dots：面板指示点 -->
+  <!-- autoplay：是否自动播放 -->
+  <!-- block：没有任何语义，不会再dom结构中生成，一般用于for循环 -->
+  <swiper class="swiper" indicator-dots circular
+    indicator-color="rgba(255,255,255,3)" indicator-active-color="rgba(255,255,255,1)">
+    <block wx:for="{{banners}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.image_src}}" mode="aspetcFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 中间的导航菜单 -->
+  <view class="menus">
+    <block wx:for="{{menus}}" wx:key="index">
+      <navigator url="{{item.url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}" mode="aspetcFill"></image>
+      </navigator>
+    </block>
+  </view>
+  <!-- 楼层的布局 -->
+  <view class="floor" wx:for="{{floors}}" wx:key="index">
+    <!-- 楼层头部 -->
+    <image 
+    class="floor-title" 
+    mode="aspectFill"
+    src="{{item.floor_title.image_src}}">
+    </image>
+    <view class=" floor-content ">
+      <!-- 左边大图 -->
+      <view class="floor-content-left ">
+        <image src="{{item.product_list[0].image_src}} " mode="aspetcFill"></image>
+  </view>
+  <!-- 右边小图 -->
+  <view class="floor-content-right">
+    <block wx:for="{{item.product_list}}" wx:key="index" wx:if="{{index>0}}">
+      <image mode="aspetcFill"
+        src=" {{item.image_src}} "></image>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 回到顶部 -->
+  <view class="toTop" bindtap="handleToTop"
+  wx:if="{{isShowTop}}">
+   <view class="arrow"></view>
+   <text>顶部</text>
+  </view>
+</view>
