@@ -1,0 +1,40 @@
+<view class="container">
+  <!-- 头部搜索栏 -->
+  <!-- <navigator url="">
+    <view class="search">
+      <view class="search-input">
+        <icon type="search" size="18" /> {{keyword}}
+      </view>
+    </view>
+  </navigator> -->
+  <!-- 搜索组件 -->
+  <search keyword="{{keyword}}" background="search" align="left"/>
+  <!-- 中间tab栏 -->
+  <view class="tab">
+    <view wx:for="{{['综合','销量','价格']}}" wx:key="index" class="tab-item">
+      {{item}}
+      <text wx:if="{{index===2}}" class="iconfont iconpaixu"></text>
+    </view>
+  </view>
+  <!-- 商品列表 -->
+  <view class="list">
+    <block wx:for="{{goods}}" wx:key="index">
+      <navigator url="" class="goods-item">
+      <image  mode="aspectFill" src="{{item.goods_small_logo}}"></image>
+
+      
+      <view class="goods-item-right">
+        <view class="goods-title">{{item.goods_name}}</view>
+        <view class="price">
+          <text>￥</text>{{item.goods_price}}
+        </view>
+      </view>
+    </navigator>
+    </block>
+  </view>
+  <!-- 拖到底部的提示 -->
+  <view class="load-more">
+     <text wx:if="{{hasMore}}">正在加载中</text>
+      <text wx:if="{{!hasMore}}">没有更多数据</text>
+  </view>
+</view>

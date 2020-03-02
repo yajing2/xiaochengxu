@@ -26,8 +26,8 @@
           <view class="product-list">
             <!-- 品牌分类 -->
             <block wx:for="{{item.children}}" wx:key="index" wx:for-item="subItem" wx:for-index="subIndex">
-              <navigator url="">
-                <image mode="widthFix" src="{{subItem.cat_icon}}"></image>
+              <navigator url="/pages/goods_list/index?keyword={{subItem.cat_name}}">
+                <image mode="aspectFill" src="{{subItem.cat_icon}}"></image>
                 <view>{{subItem.cat_name}}</view>
               </navigator>
             </block>

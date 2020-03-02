@@ -20,6 +20,7 @@
   text-align: center;
   padding: 20rpx 0;
   border-bottom: 1px #ccc solid;
+  position: relative;
 }
 
 .product {
@@ -47,7 +48,7 @@
 }
 
 .product-list navigator {
-  display: block;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -59,7 +60,8 @@
 }
 
 .product-list navigator image {
-  width: 100%;
+  width: 120rpx;
+  height: 120rpx;
 }
 
 .active {
@@ -67,7 +69,7 @@
   background: #fff;
 }
 
-.active::after {
+.active::before {
   display: block;
   content: "";
   width: 3px;

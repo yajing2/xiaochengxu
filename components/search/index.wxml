@@ -1,8 +1,8 @@
 <!-- 头部搜索栏 -->
   <navigator url="">
-    <view class="search">
-      <view class="search-input">
-        <icon type="search" size="18" /> 搜索
+    <view class="search background" >
+      <view class="search-input {{align}}">
+        <icon type="search" size="18" /> {{keyword}}
       </view>
     </view>
   </navigator>
