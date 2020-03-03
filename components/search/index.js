@@ -15,7 +15,7 @@ Component({
     }
   },
   // align输入框的文字居中还是对齐
-  externalClasses:['background',"align"],
+  externalClasses:['background'],
 
   /**
    * 组件的初始数据
