@@ -36,7 +36,7 @@ Page({
       inputValue: value
     });
     // 如果value有值才可以发送请求
-    if (!value) {
+    if (!value.trim()) {
       // 把搜索建议的数组清空
       this.setData({
         recommend: []
@@ -109,5 +109,14 @@ Page({
     wx.redirectTo({
       url:'/pages/goods_list/index?keyword='+this.data.inputValue
     })
+  },
+  handleShowList(e){
+    const {onlyid}=e.target.dataset;
+    // 如果id不存在，那么点击的并不是下拉列表
+    if(!onlyid){
+      this.setData({
+        recommend:[]
+      })
+    }
   }
 })

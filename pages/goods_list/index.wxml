@@ -5,7 +5,7 @@
       <view class="search-input">
         <icon type="search" size="18" /> {{keyword}}
       </view>
-    </view>
+    </view>7
   </navigator> -->
   <!-- 搜索组件 -->
   <search keyword="{{keyword}}" background="search" align="left"/>
@@ -19,7 +19,7 @@
   <!-- 商品列表 -->
   <view class="list">
     <block wx:for="{{goods}}" wx:key="index">
-      <navigator url="" class="goods-item">
+      <navigator url="/pages/goods_detail/index?id={{item.goods_id}}" class="goods-item">
       <image  mode="aspectFill" src="{{item.goods_small_logo}}"></image>
 
       

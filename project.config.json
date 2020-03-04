@@ -52,9 +52,10 @@
 					"id": 0,
 					"name": "pages/search/index",
 					"pathName": "pages/search/index",
-					"query": "keyword=电视",
+					"query": "id=57441",
 					"scene": null
-				}
+				},
+			
 			]
 		}
 	}

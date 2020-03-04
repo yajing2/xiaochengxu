@@ -1,19 +1,21 @@
-<view class="container">
+<view class="container" bindtap="handleShowList">
   <!-- 搜索栏 -->
   <view class="search-wrapper">
     <view class="search">
       <view class="search-input">
         <icon type="search" size="20"></icon>
         <!-- binginput类似于oninput -->
-        <input binginput="handleInput" value="{{inputValue}}" placeholder="请输入您想要的商品"
-        bindconfirm="handleEnter"
-        bindblur="handleBlur"></input>
+        <input binginput="handleInput" 
+        value="{{inputValue}}" 
+        placeholder="请输入您想要的商品"
+        bindconfirm="handleEnter"></input>
       </view>
       <view wx:if="{{inputValue}}" class="cancel-button" bindtap="handleCancel">取消</view>
       <!-- 搜索建议的列表 -->
       <!-- recommend.length是判断数组有值的时候才显示下拉列表 -->
-      <view class="recommend" wx:if="{{recommend.length}}">
-        <navigator url="" wx:for="{{recommend}}" wx:key="index">
+      <view class="recommend"  id="recommend" wx:if="{{recommend.length}}">
+        <navigator url="" wx:for="{{recommend}}" wx:key="index"
+        data-onlyid="{{item.goods_id}}">
           {{item.goods_name}}
         </navigator>
       </view>
