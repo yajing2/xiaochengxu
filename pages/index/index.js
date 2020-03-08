@@ -15,7 +15,9 @@ Page({
       url: "/home/swiperdata"
     }).then(res => {
       // console.log(res)
-      const { message } = res.data;
+      const {
+        message
+      } = res.data;
       // 赋值给banners
       this.setData({
         banners: message
@@ -25,7 +27,9 @@ Page({
     request({
       url: '/home/catitems',
     }).then(res => {
-      const { message } = res.data;
+      const {
+        message
+      } = res.data;
       // 循环添加跳转连接
       const newData = message.map((v, i) => {
         // 代表分类
@@ -43,11 +47,23 @@ Page({
     request({
       url: "/home/floordata"
     }).then(res => {
-      const { message } = res.data;
+      const {
+        message
+      } = res.data;
       this.setData({
         floors: message
       })
     })
+  },
+
+  onShow() {
+    // 如需实现 tab 选中态，要在当前页面下，通过 getTabBar 接口获取组件实例，并调用 setData 更新选中态
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
   },
   // 小程序回到顶部
   handleToTop() {
@@ -58,12 +74,14 @@ Page({
   },
   // 监听页面滚动事件
   onPageScroll(e) {
-    const { scrollTop } = e;
+    const {
+      scrollTop
+    } = e;
     let isShow = this.data.isShowTop;
     if (scrollTop > 100) {
-      isShow= true
+      isShow = true
     } else {
-      isShow= false
+      isShow = false
     }
     // 避免频繁的操作setData，所以如果下面两个值是相等的就不需要再赋值了
     if (isShow == this.data.isShowTop) return;

@@ -27,6 +27,14 @@ Page({
   },
 
   onShow() {
+      // 如需实现 tab 选中态，要在当前页面下，通过 getTabBar 接口获取组件实例，并调用 setData 更新选中态
+      if (typeof this.getTabBar === 'function' &&
+        this.getTabBar()) {
+        this.getTabBar().setData({
+          selected: 2,
+          cartCount: (wx.getStorageSync('goods') || []).length
+        })
+      }
     this.setData({
       goods: wx.getStorageSync("goods") || []
     });
@@ -97,7 +105,16 @@ Page({
           //  重新修改data的goods值
           this.setData({
             goods: this.data.goods
-          })
+          });
+          // 修改购物车的数量
+          if (typeof this.getTabBar === 'function' &&
+            this.getTabBar()) {
+            this.getTabBar().setData({
+              cartCount: (wx.getStorageSync('goods') || []).length
+            })
+          }
+          //  计算总价
+          this.handleAllPrice()
         }
       })
     }

@@ -1,61 +1,56 @@
-
-.address-info{
+.address-info {
   padding: 20rpx;
   display: flex;
   justify-content: space-between;
 }
-.address-info .tel{
+
+.address-info .tel {
   display: flex;
   align-items: center;
 }
-.address-info .tel::after{
-  display: block;
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-left: 1px #999 solid;
-  border-top: 1px #999 solid;
-  transform: rotate(135deg);
-  margin-left: 10px;
-}
-.address-detail{
+
+.address-detail {
   padding: 20rpx;
   padding-top: 0;
 }
-.address image{
+
+.address image {
   width: 750rpx;
   height: 15rpx;
   display: block;
 }
-.goods-list-title{
+
+.goods-list-title {
   border-top: 20rpx #eee solid;
   padding: 20rpx;
   display: flex;
   align-items: center;
   border-bottom: 1rpx #eee solid;
 }
-.goods-list-title view{
+
+.goods-list-title view {
   margin-right: 20rpx;
 }
-.goods-list{
-  padding-bottom: 120rpx;
-}
-.goods-item{
+
+.goods-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20rpx;
   border-bottom: 1px #eee solid;
 }
-.goods-item icon{
- margin-right: 20rpx;
+
+.goods-item icon {
+  margin-right: 20rpx;
 }
-.goods-item image{
+
+.goods-item image {
   width: 160rpx;
   height: 160rpx;
   flex-shrink: 0;
 }
-.goods-item-right{
+
+.goods-item-right {
   margin-left: 20rpx;
   display: flex;
   flex-direction: column;
@@ -63,29 +58,34 @@
   height: 160rpx;
   flex: 1;
 }
-.goods-title{
+
+.goods-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
-.goods-info{
+
+.goods-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
-.goods-price{
+
+.goods-price {
   color: red;
 }
-.goods-price text{
+
+.goods-price text {
   font-size: 12px;
 }
-.goods-number{
+
+.goods-number {
   display: flex;
   align-items: center;
 }
-.goods-number .calc-button{
+
+.goods-number .calc-button {
   width: 20px;
   height: 20px;
   border: 1px #999 solid;
@@ -93,11 +93,13 @@
   justify-content: center;
   align-items: center;
 }
-.goods-number input{
+
+.goods-number input {
   width: 35px;
   text-align: center;
 }
-.checkout{
+
+.checkout {
   position: fixed;
   left: 0;
   bottom: 48px;
@@ -109,35 +111,50 @@
   background: #fff;
   z-index: 9;
 }
-.allselect{
+
+.allselect {
   padding: 20rpx;
   display: flex;
   align-items: center;
 }
-.allselect icon{
+
+.allselect icon {
   margin-right: 20rpx;
 }
-.allprice{
+
+.allprice {
   flex: 1;
   padding: 0 20px;
 }
-.allprice-top{
+
+.allprice-top {
   color: red;
 }
-.allprice-top text text{
+
+.allprice-top text text {
   font-size: 12px;
 }
-.allprice-btm{
+
+.allprice-btm {
   color: #999;
   font-size: 12px;
 }
-.checkout-btn{
+
+.checkout-btn {
   width: 30%;
   height: 100%;
   background: red;
   color: #fff;
   display: flex;
   justify-content: center;
-  align-items: center
-  
+  align-items: center;
+}
+
+.order-info {
+  margin: 20rpx;
+}
+
+.pay-but {
+  display: block;
+  width: 710rpx !important;
 }

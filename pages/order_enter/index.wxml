@@ -1,0 +1,49 @@
+<view class="container  tab-page">
+  <!-- 收获地址 -->
+  <view class="address">
+    <view class="address-info">
+      <view>收货人:{{address.name}}</view>
+      <view class="tel">{{address.tel}}</view>
+    </view>
+
+    <view class="address-detail">
+      收货地址:{{address.detail}}
+    </view>
+
+    <image mode="aspectFill" src="../../images/cart_border@2x.png"></image>
+  </view>
+
+  <!-- 购物车商品列表头部 -->
+  <view class="goods-list-title">
+    <view class="iconfont icon-dianpu"></view>
+    优购生活馆
+  </view>
+
+  <!-- 商品列表 -->
+  <view class="goods-list">
+    <!-- 商品单品 -->
+    <view class="goods-item" wx:for="{{goods}}" wx:key="index" wx:if="{{item.select}}">
+      <navigator url="/pages/goods_detail/index?id=item.goods_id">
+        <image src="{{item.goods_small_logo}}" mode="aspentFill"></image>
+      </navigator>
+
+      <!-- 商品右侧数据 -->
+      <view class="goods-item-right">
+        <view class="goods-title">{{item.goods_name}}</view>
+        <view class="goods-info">
+          <view class="goods-price">
+            <text>￥</text>{{item.goods_price}}
+          </view>
+          <!-- 新增的数量 -->
+          <view class="">
+              数量*{{item.number}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="order-info">
+    合算：￥{{allPrice}}
+  </view> 
+  <button type="primary" class="pay-but" bindtap="handlePay">立即支付</button>
+</view>

@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container tab-page">
   <search/>
   <!-- 轮播图 -->
   <!-- indicator-dots：面板指示点 -->

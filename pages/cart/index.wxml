@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container  tab-page">
   <!-- 收获地址 -->
   <view class="address" wx:if="{{address.name}}">
     <view class="address-info">
@@ -75,6 +75,6 @@
       </view>
       <view class="allprice-btm">包含运费</view>
     </view>
-    <view class="checkout-btn">结算</view>
+    <navigator url="/pages/order_enter/index" class="checkout-btn">结算</navigator>
   </view>
 </view>

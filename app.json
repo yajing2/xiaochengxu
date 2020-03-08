@@ -6,7 +6,9 @@
     "pages/personal/index",
     "pages/goods_list/index",
     "pages/search/index",
-    "pages/goods_detail/index"
+    "pages/goods_detail/index",
+    "pages/order_enter/index",
+    "pages/authorize/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,6 +17,7 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar":{
+    "custom":true,
      "color":"#000",
      "selectedColor":"#ff2d4a",
      "borderStyle":"black",

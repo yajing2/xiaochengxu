@@ -98,6 +98,6 @@ Page({
       })
     }
     // 保存到本地
-    wx.setStorageSync("goods", goods)
+    wx.setStorageSync("goods", goods);
   }
 })
